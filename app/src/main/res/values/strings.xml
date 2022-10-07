@@ -3,4 +3,10 @@
     <string name="title_home">Home</string>
     <string name="title_favorites">Favorites</string>
     <string name="title_login">Login</string>
+    <string name="login">login</string>
+    <string name="enter_your_username">Enter your username</string>
+    <string name="username">Username:</string>
+    <string name="password">Password:</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="defaultUsername">e1730934</string>
 </resources>

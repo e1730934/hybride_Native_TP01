@@ -2,6 +2,7 @@ package com.inf5d6.tp1
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.MutableLiveData
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -12,7 +13,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
     companion object {
         const val SRVURL = "https://tvshowdbapi.herokuapp.com"
-        var TOKEN = ""
+        var TOKEN : MutableLiveData<String> = MutableLiveData()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
