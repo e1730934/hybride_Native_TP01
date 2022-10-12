@@ -28,6 +28,7 @@ class LoginRepository(private val application: Application) {
                         MainActivity.TOKEN.postValue("Bearer " + response.getString("token"))
                         //Create intent to launch home activity
                         val intent = Intent(application, MainActivity::class.java)
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                         //Start the activity
                         application.startActivity(intent)
                     }

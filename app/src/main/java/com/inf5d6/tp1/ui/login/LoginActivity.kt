@@ -23,6 +23,7 @@ class LoginActivity : AppCompatActivity() {
         val btnLogin = findViewById<Button>(R.id.btnLogin)
         btnLogin.setOnClickListener {
             loginViewModel.username = findViewById<EditText>(R.id.inputUsername).text.toString()
+            loginViewModel.password = findViewById<EditText>(R.id.inputPassword).text.toString()
             loginViewModel.login()
         }
     }
