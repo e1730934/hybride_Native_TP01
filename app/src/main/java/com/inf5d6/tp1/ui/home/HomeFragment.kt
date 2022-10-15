@@ -6,6 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.inf5d6.tp1.R
+import com.inf5d6.tp1.adapters.TvShowRVAdapter
 
 class HomeFragment : Fragment() {
 
@@ -16,12 +20,18 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(com.inf5d6.tp1.R.layout.fragment_home, container, false)
+        return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         this.homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+            ViewModelProvider(this)[HomeViewModel::class.java]
+
+        val rvTvShows = view.findViewById<RecyclerView>(R.id.rvTvShows)
+        rvTvShows.layoutManager= GridLayoutManager(this.context, 2)
+        this.homeViewModel.tvshows.observe(viewLifecycleOwner) {
+            rvTvShows.adapter = TvShowRVAdapter(it)
+        }
     }
 }
