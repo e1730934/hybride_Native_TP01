@@ -7,11 +7,12 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/dtvs_imgTvShow"
         android:layout_width="60dp"
         android:layout_height="100dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="52dp"
+        android:contentDescription="@string/image_of_the_tvshow_presented"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/poster" />
@@ -22,8 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintStart_toEndOf="@+id/dtvs_imgTvShow"
+        app:layout_constraintTop_toTopOf="@+id/dtvs_imgTvShow" />
 
     <TextView
         android:id="@+id/dtvs_Years"
@@ -32,7 +33,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/dtvs_imgTvShow"
         app:layout_constraintTop_toBottomOf="@+id/dtvs_tvTitle" />
 
     <TextView
@@ -42,7 +43,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="16dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/dtvs_imgTvShow"
         app:layout_constraintTop_toBottomOf="@+id/dtvs_Years" />
 
     <TextView
@@ -54,16 +55,16 @@
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="@+id/dtvs_EpisodesCount"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/dtvs_imgTvShow" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/lblCast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="132dp"
         android:layout_marginEnd="366dp"
-        android:text="Cast"
+        android:text="@string/cast"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dtvs_Summary" />
@@ -77,5 +78,26 @@
         android:layout_marginEnd="355dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/lblCast" />
+
+    <TextView
+        android:id="@+id/lblSeason"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:text="@string/season"
+        app:layout_constraintStart_toStartOf="@+id/lblCast"
+        app:layout_constraintTop_toBottomOf="@+id/dtvs_rvCast" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dtvs_rvSeasons"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="355dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblSeason" />
 </androidx.constraintlayout.widget.ConstraintLayout>

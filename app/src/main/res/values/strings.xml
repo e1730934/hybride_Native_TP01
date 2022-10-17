@@ -10,4 +10,7 @@
     <string name="enter_your_password">Enter your password</string>
     <string name="defaultUsername">e1730934</string>
     <string name="image_of_the_tvshow_presented">Image of the tvshow presented</string>
+    <string name="season">Season</string>
+    <string name="cast">Cast</string>
+    <string name="image_of_the_cast_member">Image of the cast member</string>
 </resources>
