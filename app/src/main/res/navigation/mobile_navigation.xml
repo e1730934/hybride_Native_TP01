@@ -16,5 +16,10 @@
         android:name="com.inf5d6.tp1.ui.favorites.FavoritesFragment"
         android:label="@string/title_favorites"
         tools:layout="@layout/fragment_favorites" />
+    <fragment
+        android:id="@+id/detailsTvShowFragment"
+        android:name="com.inf5d6.tp1.ui.detailsTvShow.DetailsTvShowFragment"
+        android:label="DetailsTvShowFragment"
+        tools:layout="@layout/fragment_detailstvshow"/>
 
 </navigation>

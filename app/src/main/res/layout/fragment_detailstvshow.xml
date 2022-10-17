@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:text="TextView"
+        android:text="@string/textview"
         app:layout_constraintStart_toEndOf="@+id/dtvs_imgTvShow"
         app:layout_constraintTop_toTopOf="@+id/dtvs_imgTvShow" />
 
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
-        android:text="TextView"
+        android:text="Default Year"
         app:layout_constraintStart_toEndOf="@+id/dtvs_imgTvShow"
         app:layout_constraintTop_toBottomOf="@+id/dtvs_tvTitle" />
 

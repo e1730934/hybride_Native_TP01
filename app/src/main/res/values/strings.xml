@@ -13,4 +13,6 @@
     <string name="season">Season</string>
     <string name="cast">Cast</string>
     <string name="image_of_the_cast_member">Image of the cast member</string>
+    <string name="default_season_name">Default Season Name</string>
+    <string name="textview">TextView</string>
 </resources>
