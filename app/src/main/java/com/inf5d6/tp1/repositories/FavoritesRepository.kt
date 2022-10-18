@@ -4,14 +4,13 @@ import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonArrayRequest
-import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 import com.inf5d6.tp1.MainActivity
 import com.inf5d6.tp1.models.TvShow
 
 class FavoritesRepository(private val application: Application) {
-    fun getTvShows(tvshows: MutableLiveData<MutableList<TvShow>>) {
+    fun getFavoriteTvShows(tvshows: MutableLiveData<MutableList<TvShow>>) {
         val queue = Volley.newRequestQueue(application)
         val r = object : JsonArrayRequest(
             Request.Method.GET, MainActivity.SRVURL + "/favorites", null,

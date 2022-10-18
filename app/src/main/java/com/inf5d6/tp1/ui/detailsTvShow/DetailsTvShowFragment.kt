@@ -51,6 +51,10 @@ class DetailsTvShowFragment : Fragment() {
         tvShowRvCast.layoutManager = layoutManagerCast
         tvShowRvSeasons.layoutManager = layoutManagerSeason
 
+        tvShowFavBtn.setOnClickListener {
+            detailsTvShowViewModel.toggleFavorite(tvShowId)
+        }
+
         detailsTvShowViewModelFactory =
             DetailsTvShowViewModelFactory(activity!!.application, tvShowId)
         this.detailsTvShowViewModel =
@@ -58,9 +62,9 @@ class DetailsTvShowFragment : Fragment() {
 
         this.detailsTvShowViewModel.isFavorite.observe(this) {
             if (it == true) {
-                Toast.makeText(requireContext(), "TvShow is favorite", Toast.LENGTH_SHORT).show()
+                tvShowFavBtn.setImageResource(R.drawable.ic_baseline_favorite_24)
             } else {
-                Toast.makeText(requireContext(), "TvShow is not favorite", Toast.LENGTH_SHORT).show()
+                tvShowFavBtn.setImageResource(R.drawable.ic_baseline_favorite_24_white)
             }
         }
 

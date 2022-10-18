@@ -14,7 +14,7 @@ class FavoritesViewModel(val app: Application) : AndroidViewModel(app) {
     init {
         viewModelScope.launch(Dispatchers.IO) {
             val favoritesRepository = FavoritesRepository(app)
-            favoritesRepository.getTvShows(tvshows)
+            favoritesRepository.getFavoriteTvShows(tvshows)
         }
     }
 
