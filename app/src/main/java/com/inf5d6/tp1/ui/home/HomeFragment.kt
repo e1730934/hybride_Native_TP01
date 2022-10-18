@@ -20,7 +20,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(R.layout.list_tvshow, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
