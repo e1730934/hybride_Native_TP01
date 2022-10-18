@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:text="@string/textview"
+        android:text="@string/default_title"
         app:layout_constraintStart_toEndOf="@+id/dtvs_imgTvShow"
         app:layout_constraintTop_toTopOf="@+id/dtvs_imgTvShow" />
 
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
-        android:text="Default Year"
+        android:text="@string/default_year"
         app:layout_constraintStart_toEndOf="@+id/dtvs_imgTvShow"
         app:layout_constraintTop_toBottomOf="@+id/dtvs_tvTitle" />
 
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:text="@string/default_episode_count"
         app:layout_constraintStart_toEndOf="@+id/dtvs_imgTvShow"
         app:layout_constraintTop_toBottomOf="@+id/dtvs_Years" />
 
@@ -51,9 +51,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="39dp"
-        android:layout_marginTop="24dp"
-        android:text="TextView"
+        android:layout_marginTop="20dp"
+        android:text="@string/default_plot"
         app:layout_constraintEnd_toEndOf="@+id/dtvs_EpisodesCount"
+        app:layout_constraintHorizontal_bias="0.006"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dtvs_imgTvShow" />
 

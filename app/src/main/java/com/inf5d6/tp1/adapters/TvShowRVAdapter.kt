@@ -30,7 +30,7 @@ class TvShowRVAdapter(private val listTvShow: MutableList<TvShow>) :
         Picasso.get().load(listTvShow[position].imgURL).into(imgTvShow)
 
         holder.view.setOnClickListener {
-            val bundle = bundleOf("tvShow" to listTvShow[position].tvshowId)
+            val bundle = bundleOf("tvShowId" to listTvShow[position].tvshowId)
             holder.view.findNavController().navigate(R.id.detailsTvShowFragment, bundle)
 
         }
