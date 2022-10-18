@@ -25,45 +25,6 @@ class DetailsTvShowRepository(private val application: Application) {
             })
         queue.add(r)
     }
-    fun getFavoriteState(tvShowId: Int, favoriteState: MutableLiveData<Boolean>) {
-        val apiURL = MainActivity.SRVURL+ "/favorite?tvshowId=" + tvShowId.toString()
-        val queue = Volley.newRequestQueue(application)
-        val r = object : JsonObjectRequest(
-            Request.Method.GET, apiURL, null,
-            {
-               favoriteState.value = it.getBoolean("isFavorite")
-              },
-            {
-                println("ERREUR: /api/favorites")
-            }) {
-            override fun getHeaders(): MutableMap<String, String> {
-                val headers = HashMap<String, String>()
-                headers["Authorization"] = MainActivity.TOKEN.value.toString()
-                return headers
-            }
-        }
-        queue.add(r)
-       }
-    fun toggleFavorite(tvShowId: Int, isFavorite: MutableLiveData<Boolean>){
-        val apiURL = MainActivity.SRVURL+ "/favorite?tvshowId=" + tvShowId.toString()
-        val method = if (isFavorite.value == true) Request.Method.DELETE else Request.Method.POST
-        val queue = Volley.newRequestQueue(application)
-        val r = object : JsonObjectRequest(
-            method, apiURL, null,
-            {
-                isFavorite.value = it.getBoolean("isFavorite")
-            },
-            {
-                println("ERREUR: /api/favorites")
-            }) {
-            override fun getHeaders(): MutableMap<String, String> {
-                val headers = HashMap<String, String>()
-                headers["Authorization"] = MainActivity.TOKEN.value.toString()
-                return headers
-            }
-        }
-        queue.add(r)
-    }
 }
 
 

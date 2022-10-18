@@ -7,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.inf5d6.tp1.models.DetailsTvShow
 import com.inf5d6.tp1.repositories.DetailsTvShowRepository
 import com.inf5d6.tp1.repositories.FavoritesRepository
-import com.inf5d6.tp1.ui.favorites.FavoritesViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -20,16 +19,16 @@ class DetailsTvShowViewModel(application: Application, tvShowId: Int): AndroidVi
         viewModelScope.launch(Dispatchers.IO) {
             val detailsTvShowRepository = DetailsTvShowRepository(getApplication())
             detailsTvShowRepository.getTvShowDetails(tvShowId,detailsTvShow)
-            detailsTvShowRepository.getFavoriteState(tvShowId,isFavorite)
+
+            val favRepository = FavoritesRepository(getApplication())
+            favRepository.getFavoriteState(tvShowId,isFavorite)
         }
     }
     fun toggleFavorite(tvShowId: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            val detailsTvShowRepository = DetailsTvShowRepository(getApplication())
-            detailsTvShowRepository.toggleFavorite(tvShowId,isFavorite)
+            val favRepository = FavoritesRepository(getApplication())
+            favRepository.toggleFavorite(tvShowId,isFavorite)
         }
     }
-
-
 }
 

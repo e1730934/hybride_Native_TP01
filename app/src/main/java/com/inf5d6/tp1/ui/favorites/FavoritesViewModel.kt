@@ -17,6 +17,4 @@ class FavoritesViewModel(val app: Application) : AndroidViewModel(app) {
             favoritesRepository.getFavoriteTvShows(tvshows)
         }
     }
-
-
 }
