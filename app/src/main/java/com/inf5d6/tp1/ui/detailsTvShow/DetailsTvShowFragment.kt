@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -43,6 +44,8 @@ class DetailsTvShowFragment : Fragment() {
         val tvShowRvCast = view.findViewById<RecyclerView>(R.id.dtvs_rvCast)
         val tvShowRvSeasons = view.findViewById<RecyclerView>(R.id.dtvs_rvSeasons)
 
+        val tvShowFavBtn = view.findViewById<ImageButton>(R.id.dtvs_btnActionFav)
+
         val layoutManagerCast = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         val layoutManagerSeason = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         tvShowRvCast.layoutManager = layoutManagerCast
@@ -53,7 +56,13 @@ class DetailsTvShowFragment : Fragment() {
         this.detailsTvShowViewModel =
             ViewModelProvider(this, this.detailsTvShowViewModelFactory)[DetailsTvShowViewModel::class.java]
 
-
+        this.detailsTvShowViewModel.isFavorite.observe(this) {
+            if (it == true) {
+                Toast.makeText(requireContext(), "TvShow is favorite", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(requireContext(), "TvShow is not favorite", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         this.detailsTvShowViewModel.detailsTvShow.observe(this) {
             if (it != null) {

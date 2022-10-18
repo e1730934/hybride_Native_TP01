@@ -22,4 +22,5 @@
     <string name="default_character_name">Default Character Name</string>
     <string name="default_cast_member_name">Default Cast Member Name</string>
     <string name="image_of_the_season">Image of the season</string>
+    <string name="add_remove_tvshow_from_favorites">Add / Remove tvshow from favorites</string>
 </resources>

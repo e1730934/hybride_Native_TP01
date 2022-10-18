@@ -12,11 +12,14 @@ import kotlinx.coroutines.launch
 
 class DetailsTvShowViewModel(application: Application, tvShowId: Int): AndroidViewModel(application) {
     public val detailsTvShow: MutableLiveData<DetailsTvShow> = MutableLiveData()
+    public val isFavorite: MutableLiveData<Boolean> = MutableLiveData()
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
             val detailsTvShowRepository = DetailsTvShowRepository(getApplication())
             detailsTvShowRepository.getTvShowDetails(tvShowId,detailsTvShow)
+            detailsTvShowRepository.getFavoriteState(tvShowId,isFavorite)
+
         }
     }
 

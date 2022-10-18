@@ -111,5 +111,17 @@
         tools:itemCount="1"
         tools:listitem="@layout/item_season" />
 
+    <ImageButton
+        android:id="@+id/dtvs_btnActionFav"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/add_remove_tvshow_from_favorites"
+        app:layout_constraintStart_toStartOf="@+id/dtvs_EpisodesCount"
+        app:layout_constraintTop_toBottomOf="@+id/dtvs_EpisodesCount"
+        app:srcCompat="@android:drawable/btn_star"
+        app:tint="@color/white" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
