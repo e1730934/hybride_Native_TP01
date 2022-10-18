@@ -10,15 +10,15 @@ import com.inf5d6.tp1.MainActivity
 import com.inf5d6.tp1.models.DetailsTvShow
 
 class DetailsTvShowRepository(private val application: Application) {
-    fun getTvShowDetails(tvShowId: Int, detailsTvShow: MutableLiveData<MutableList<DetailsTvShow>>) {
-        val apiURL = MainActivity.SRVURL+ "/tvshows?tvshowId=" + tvShowId.toString()
+    fun getTvShowDetails(tvShowId: Int, detailsTvShow: MutableLiveData<DetailsTvShow>) {
+        val apiURL = MainActivity.SRVURL+ "/tvshow?tvshowId=" + tvShowId.toString()
         val queue = Volley.newRequestQueue(application)
         val r = StringRequest(
             Request.Method.GET, apiURL,
             {
-                val tvShowInfo = Gson().fromJson(it, Array<DetailsTvShow>::class.java)
-                println("Test213:${tvShowInfo[tvShowId].title}")
-                detailsTvShow.postValue(tvShowInfo.toMutableList())
+                val tvShowInfo = Gson().fromJson(it, DetailsTvShow::class.java)
+                println("Test:${tvShowInfo.title}")
+                detailsTvShow.postValue(tvShowInfo)
             },
             {
                 println("ERREUR: /api/tvshows")

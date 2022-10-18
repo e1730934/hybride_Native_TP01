@@ -28,22 +28,28 @@ class DetailsTvShowFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val tvShowId = this.requireArguments().getInt("tvShowId")
-        detailsTvShowViewModelFactory = this.activity?.let { DetailsTvShowViewModelFactory(it.application, tvShowId) }!!
+        detailsTvShowViewModelFactory =
+            DetailsTvShowViewModelFactory(activity!!.application, tvShowId)
         this.detailsTvShowViewModel =
             ViewModelProvider(this, this.detailsTvShowViewModelFactory)[DetailsTvShowViewModel::class.java]
 
 
 
-        this.detailsTvShowViewModel.detailsTvShow.observe(this, {
+        this.detailsTvShowViewModel.detailsTvShow.observe(this) {
             val tvShowTitle = view.findViewById<TextView>(R.id.dtvs_tvTitle)
             val tvShowYear = view.findViewById<TextView>(R.id.dtvs_Years)
             val tvShowEpisodesCount = view.findViewById<TextView>(R.id.dtvs_EpisodesCount)
-            if (it.size > 0) {
-                Toast.makeText(this.context, it.size.toString(), Toast.LENGTH_SHORT).show()
-                tvShowTitle.text = it[0].title
-                tvShowYear.text = it[0].year.toString()
+            val tvShowSummary = view.findViewById<TextView>(R.id.dtvs_Summary)
+            if (it != null) {
+                tvShowTitle.text = it.title
+                tvShowYear.text = it.year.toString()
+                tvShowEpisodesCount.text = it.episodeCount.toString()
+                tvShowSummary.text = it.plot
+
+            } else {
+                Toast.makeText(this.context, "Error", Toast.LENGTH_SHORT).show()
             }
-        })
+        }
     }
 
 }

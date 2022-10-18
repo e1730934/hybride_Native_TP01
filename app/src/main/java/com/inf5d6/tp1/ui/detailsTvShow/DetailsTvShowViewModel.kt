@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 
 
 class DetailsTvShowViewModel(application: Application, tvShowId: Int): AndroidViewModel(application) {
-    public val detailsTvShow: MutableLiveData<MutableList<DetailsTvShow>> = MutableLiveData(mutableListOf())
+    public val detailsTvShow: MutableLiveData<DetailsTvShow> = MutableLiveData()
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
