@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/imgCastMember"
+        android:id="@+id/imgSeasonPoster"
         android:layout_width="150dp"
         android:layout_height="200dp"
         android:layout_weight="1"

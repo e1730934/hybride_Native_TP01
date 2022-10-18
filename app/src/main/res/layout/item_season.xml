@@ -6,11 +6,11 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/imgCastMember"
+        android:id="@+id/imgSeasonPoster"
         android:layout_width="150dp"
         android:layout_height="200dp"
         android:layout_weight="1"
-        android:contentDescription="@string/image_of_the_cast_member"
+        android:contentDescription="@string/image_of_the_season"
         app:srcCompat="@drawable/poster" />
 
     <TextView
@@ -18,5 +18,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="@string/default_season_name" />
+        android:text="@string/default_season_name"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/txtEpisodesCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/default_episode_count"
+        android:textAlignment="center" />
 </LinearLayout>

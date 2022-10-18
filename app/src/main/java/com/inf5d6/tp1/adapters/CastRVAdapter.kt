@@ -22,7 +22,7 @@ class CastRVAdapter(private val castMembers: List<Role>) :
     }
 
     override fun onBindViewHolder(holder: CastViewModel, position: Int) {
-        val imgCast = holder.view.findViewById<ImageView>(R.id.imgCastMember)
+        val imgCast = holder.view.findViewById<ImageView>(R.id.imgSeasonPoster)
         holder.view.findViewById<TextView>(R.id.txtCharacterName).text = castMembers[position].character
         holder.view.findViewById<TextView>(R.id.txtCastFullName).text = castMembers[position].name
         Picasso.get().load(castMembers[position].imgURL).into(imgCast)

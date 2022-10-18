@@ -10,7 +10,7 @@
     <string name="enter_your_password">Enter your password</string>
     <string name="defaultUsername">e1730934</string>
     <string name="image_of_the_tvshow_presented">Image of the tvshow presented</string>
-    <string name="season">Season</string>
+    <string name="seasons">Seasons</string>
     <string name="cast">Cast</string>
     <string name="image_of_the_cast_member">Image of the cast member</string>
     <string name="default_season_name">Default Season Name</string>
@@ -21,4 +21,5 @@
     <string name="default_plot">Default plot</string>
     <string name="default_character_name">Default Character Name</string>
     <string name="default_cast_member_name">Default Cast Member Name</string>
+    <string name="image_of_the_season">Image of the season</string>
 </resources>

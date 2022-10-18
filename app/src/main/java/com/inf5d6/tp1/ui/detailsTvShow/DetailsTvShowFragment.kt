@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.inf5d6.tp1.R
 import com.inf5d6.tp1.adapters.CastRVAdapter
+import com.inf5d6.tp1.adapters.SeasonRVAdapter
 import com.inf5d6.tp1.models.Role
 import com.squareup.picasso.Picasso
 
@@ -58,13 +59,17 @@ class DetailsTvShowFragment : Fragment() {
             if (it != null) {
                 tvShowTitle.text = it.title
                 tvShowYear.text = it.year.toString()
-                tvShowEpisodesCount.text = it.episodeCount.toString()
+                tvShowEpisodesCount.text = it.episodeCount.toString() + " episodes"
                 tvShowSummary.text = it.plot
                 Picasso.get().load(it.imgURL).into(tvShowImg)
 
                 if (it.roles != null) {
                     val castAdapter = CastRVAdapter(it.roles)
                     tvShowRvCast.adapter = castAdapter
+                }
+                if(it.seasons != null){
+                    val seasonsAdapter = SeasonRVAdapter(it.seasons)
+                    tvShowRvSeasons.adapter = seasonsAdapter
                 }
             } else {
                 Toast.makeText(this.context, "Error", Toast.LENGTH_SHORT).show()

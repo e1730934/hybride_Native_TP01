@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -11,7 +15,7 @@
         android:layout_width="150dp"
         android:layout_height="200dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="16dp"
         android:contentDescription="@string/image_of_the_tvshow_presented"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -19,10 +23,12 @@
 
     <TextView
         android:id="@+id/dtvs_tvTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="16dp"
         android:text="@string/default_title"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/dtvs_imgTvShow"
         app:layout_constraintTop_toTopOf="@+id/dtvs_imgTvShow" />
 
@@ -30,20 +36,18 @@
         android:id="@+id/dtvs_Years"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
         android:text="@string/default_year"
-        app:layout_constraintStart_toEndOf="@+id/dtvs_imgTvShow"
+        app:layout_constraintStart_toStartOf="@+id/dtvs_tvTitle"
         app:layout_constraintTop_toBottomOf="@+id/dtvs_tvTitle" />
 
     <TextView
         android:id="@+id/dtvs_EpisodesCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
         android:layout_marginTop="16dp"
         android:text="@string/default_episode_count"
-        app:layout_constraintStart_toEndOf="@+id/dtvs_imgTvShow"
+        app:layout_constraintStart_toStartOf="@+id/dtvs_Years"
         app:layout_constraintTop_toBottomOf="@+id/dtvs_Years" />
 
     <TextView
@@ -74,9 +78,10 @@
         android:id="@+id/lblSeason"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="@string/season"
-        app:layout_constraintStart_toStartOf="@+id/lblCast"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/seasons"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dtvs_rvCast" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -105,4 +110,6 @@
         app:layout_constraintTop_toBottomOf="@+id/lblSeason"
         tools:itemCount="1"
         tools:listitem="@layout/item_season" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
