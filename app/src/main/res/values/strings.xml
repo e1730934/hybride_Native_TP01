@@ -19,4 +19,6 @@
     <string name="default_title">Default title</string>
     <string name="default_episode_count">Default episode count</string>
     <string name="default_plot">Default plot</string>
+    <string name="default_character_name">Default Character Name</string>
+    <string name="default_cast_member_name">Default Cast Member Name</string>
 </resources>
