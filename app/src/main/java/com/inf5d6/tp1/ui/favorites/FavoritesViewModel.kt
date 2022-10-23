@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 
 class FavoritesViewModel(val app: Application) : AndroidViewModel(app) {
     public val tvshows: MutableLiveData<MutableList<TvShow>> = MutableLiveData(mutableListOf())
-    init {
+    fun getFavorites() {
         viewModelScope.launch(Dispatchers.IO) {
             val favoritesRepository = FavoritesRepository(app)
             favoritesRepository.getFavoriteTvShows(tvshows)

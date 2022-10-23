@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 import com.inf5d6.tp1.MainActivity
@@ -54,10 +55,11 @@ class FavoritesRepository(private val application: Application) {
         val apiURL = MainActivity.SRVURL+ "/favorite?tvshowId=" + tvShowId.toString()
         val method = if (isFavorite.value == true) Request.Method.DELETE else Request.Method.POST
         val queue = Volley.newRequestQueue(application)
-        val r = object : JsonObjectRequest(
-            method, apiURL, null,
+        val r = object : StringRequest(
+            method, apiURL,
             {
-                isFavorite.value = it.getBoolean("isFavorite")
+                // les méthodes DELTETE et POST ne renvoient pas de réponse
+                isFavorite.value = !isFavorite.value!!
             },
             {
                 println("ERREUR: /api/favorites")

@@ -28,6 +28,7 @@ class FavoritesFragment : Fragment() {
 
         this.favoritesViewModel =
             ViewModelProvider(this)[FavoritesViewModel::class.java]
+        this.favoritesViewModel.getFavorites()
 
         val rvTvShows = view.findViewById<RecyclerView>(R.id.rvTvShows)
         rvTvShows.layoutManager= GridLayoutManager(this.context, 2)
